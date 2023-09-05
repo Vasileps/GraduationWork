@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="MessengerApp.Controls.AttachPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessengerApp.Controls"
+             mc:Ignorable="d">
+    <Border
+        BorderThickness="5"
+        CornerRadius="10"
+        Background="{DynamicResource PrimaryBrush}">
+
+        <DockPanel Margin="10">
+            <Button
+                DockPanel.Dock="Top"
+                Margin="5"
+                Style="{DynamicResource HyperLinkButton}"
+                Content="{DynamicResource lcImage}"
+                HorizontalAlignment="Center"
+                FontSize="20"
+                FontWeight="DemiBold"
+                Click="ImageButton_Click"/>
+            <Button
+                DockPanel.Dock="Top"
+                Margin="5"
+                Style="{DynamicResource HyperLinkButton}"
+                Content="{DynamicResource lcFile}"
+                HorizontalAlignment="Center"
+                FontSize="20"
+                FontWeight="DemiBold"
+                Click="FileButton_Click"/>
+        </DockPanel>
+    </Border>
+</UserControl>

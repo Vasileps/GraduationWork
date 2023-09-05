@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="MessengerApp.Controls.UserProfileControls.UserProfile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessengerApp.Controls.UserProfileControls" xmlns:controls="clr-namespace:MessengerApp.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+            
+
+        <Border
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            x:Name="Mask"
+            Background="White"
+            CornerRadius="15">
+            
+        </Border>
+        <Border 
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Panel.ZIndex="1"
+            MinWidth="400"
+            MinHeight="250"            
+            CornerRadius="15"
+            Background="{DynamicResource PrimaryBrush}">
+            <DockPanel
+                LastChildFill="True" 
+                Margin="15">
+
+                <DockPanel DockPanel.Dock="Top">
+                    <controls:ImageFrame
+                        Width="65"
+                        Height="65"
+                        Margin="5 0 5 0"
+                        x:Name="Image"
+                        MouseDown="Image_MouseDown"/>
+                    <TextBlock
+                        x:Name="UsernameBlock"
+                        DockPanel.Dock="Left"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        Margin="15 5 5 5"/>
+                </DockPanel>
+
+                <DockPanel
+                    Margin="0 15 0 0"
+                    LastChildFill="False"
+                    VerticalAlignment="Center">
+                    
+                    <Button
+                        x:Name="UsernameButton"
+                        Style="{DynamicResource NoDecorButton}"
+                        DockPanel.Dock="Top"
+                        Margin="5"
+                        Click="UsernameButton_Click">
+
+                        <DockPanel
+                            LastChildFill="False"
+                            Margin="0 5 0 5">
+                            
+                            <TextBlock
+                                DockPanel.Dock="Left"
+                                VerticalAlignment="Center"
+                                Text="{DynamicResource lcUsername}"
+                                FontSize="18"/>
+                            <TextBlock
+                                x:Name="UsernameButtonBlock"
+                                DockPanel.Dock="Right"
+                                VerticalAlignment="Center" 
+                                FontSize="18"
+                                Margin="20 0 0 0"/>
+                        </DockPanel>
+                    </Button>
+
+                    <Button
+                        x:Name="MailButton"
+                        Style="{DynamicResource NoDecorButton}"
+                        DockPanel.Dock="Top"
+                        Margin="5"
+                        Click="MailButton_Click">
+                        
+                        <DockPanel
+                            LastChildFill="False"
+                            Margin="0 5 0 5">
+                            
+                            <TextBlock
+                                DockPanel.Dock="Left"
+                                VerticalAlignment="Center"
+                                Text="{DynamicResource lcMail}"
+                                FontSize="18"/>
+                            <TextBlock
+                                x:Name="MailButtonBlock"
+                                DockPanel.Dock="Right"
+                                VerticalAlignment="Center"  
+                                FontSize="18"
+                                Margin="20 0 0 0"/>
+                        </DockPanel>
+                    </Button>
+
+                    <Button
+                        x:Name="PasswordButton"
+                        Style="{DynamicResource NoDecorButton}"
+                        DockPanel.Dock="Top"
+                        Margin="5"
+                        Click="PasswordButton_Click">
+                        
+                        <DockPanel
+                            LastChildFill="False"
+                            Margin="0 5 0 5">
+
+                            <TextBlock
+                                DockPanel.Dock="Left"
+                                VerticalAlignment="Center"
+                                Text="{DynamicResource lcPassword}"
+                                FontSize="18"/>
+                            <TextBlock
+                                DockPanel.Dock="Right"
+                                VerticalAlignment="Center" 
+                                FontSize="18"
+                                Text="**********"
+                                Margin="20 0 0 0"/>
+                        </DockPanel>
+                    </Button>
+                </DockPanel>
+            </DockPanel>
+        </Border>
+
+            <controls:OverlayContainer
+            x:Name="OverlayArea"
+            AutoShowOnUpdate="True"
+            Panel.ZIndex="2">
+                <controls:OverlayContainer.OpacityMask>
+                    <VisualBrush Visual="{Binding ElementName=Mask}"/>
+                </controls:OverlayContainer.OpacityMask>
+            </controls:OverlayContainer>
+        </Grid>
+    </Grid>
+</UserControl>

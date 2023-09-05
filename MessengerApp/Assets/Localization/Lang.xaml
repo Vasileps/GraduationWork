@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+
+    <v:String x:Key="lcSignIn">Войти</v:String>
+    <v:String x:Key="lcMail">Почта</v:String>
+    <v:String x:Key="lcOr">Или</v:String>
+    <v:String x:Key="lcPassword">Пароль</v:String>
+    <v:String x:Key="lcSignUp">Создать аккаунт</v:String>
+    <v:String x:Key="lcStarting">Загрузка</v:String>
+    <v:String x:Key="lcUsername">Имя пользователя</v:String>
+    <v:String x:Key="lcWelcomeToMirrorNet">Добро пожаловать в MirrorNet</v:String>
+    <v:String x:Key="lcConfirm">Подтвердить</v:String>
+    <v:String x:Key="lcCode">Код</v:String>
+    <v:String x:Key="lcConfirmEmailSignUp">Код для подтверждения регистрации был отправлен на почту {mail}</v:String>
+    <v:String x:Key="lcUsers">Пользователи</v:String>
+    <v:String x:Key="lcLogOut">Выйти</v:String>
+    <v:String x:Key="lcLanguage">Язык</v:String>
+    <v:String x:Key="lcChangeProfileImage">Изменить фото профиля</v:String>
+    <v:String x:Key="lcEditing">Редактирование</v:String>    
+    <v:String x:Key="lcChange">Изменить</v:String>
+    <v:String x:Key="lcProfileSetting">Настройки профиля</v:String>
+    <v:String x:Key="lcUsernameTaken">Данное имя занято</v:String>
+    <v:String x:Key="lcMailTaken">Данная почта занята</v:String>
+    <v:String x:Key="lcOldPassword">Старый пароль</v:String>
+    <v:String x:Key="lcNewPassword">Новый Пароль</v:String>
+    <v:String x:Key="lcWrongPassword">Неверный пароль</v:String>
+    <v:String x:Key="lcImage">Изображение</v:String>
+    <v:String x:Key="lcLoading">Загрузка</v:String>
+    <v:String x:Key="lcFile">Файл</v:String>
+</ResourceDictionary>

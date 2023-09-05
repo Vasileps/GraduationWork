@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="MessengerApp.Views.SignInView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessengerApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+    
+    <Grid Margin="5">
+        
+        <StackPanel 
+            Orientation="Vertical"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            MinWidth="300"
+            Margin="0 0 0 15">
+            
+            <TextBlock 
+                Margin="10 5 0 5"
+                FontSize="18"
+                Text="{DynamicResource lcMail}"/>
+            <TextBox 
+                x:Name="MailBox"
+                FontSize="18"
+                Style="{DynamicResource RoundedTextBlock}"                
+                KeyDown="MailBox_KeyDown"/>
+            
+            <TextBlock 
+                Margin="10 5 0 5"
+                FontSize="18"
+                Text="{DynamicResource lcPassword}"/>
+            <PasswordBox 
+                x:Name="PasswordBox"
+                FontSize="18"
+                Style="{DynamicResource RoundedPasswordBlock}"                
+                KeyDown="PasswordBox_KeyDown"/> 
+            
+            <Button 
+                x:Name="SignInButton"
+                Margin="5 20 5 5"
+                FontSize="18"
+                HorizontalAlignment="Center"
+                Content="{DynamicResource lcSignIn}"
+                MinWidth="200"
+                Click="SignInButton_Click"/>
+        </StackPanel>
+
+        <Button
+            x:Name="SignUpButton"
+            Style="{DynamicResource HyperLinkButton}"
+            Margin="5 5 5 10"
+            FontSize="16"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Center"
+            Content="{DynamicResource lcSignUp}"
+            Click="SignUpButton_Click"/>
+
+        <Button 
+            x:Name="BackButton"
+            Style="{DynamicResource HyperLinkButton}"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe UI Symbol"
+            Content="&#xE112;"
+            FontSize="30"
+            Click="BackButton_Click">
+        </Button>
+    </Grid>
+</UserControl>

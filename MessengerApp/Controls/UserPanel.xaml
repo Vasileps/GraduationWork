@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="MessengerApp.Controls.UserPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessengerApp.Controls"
+             mc:Ignorable="d" 
+             Height="60"
+             Padding="5">
+    <DockPanel>
+        <local:ImageFrame 
+            Width="45"
+            Height="45"
+            x:Name="Image"/>
+
+        <Button x:Name="CreateChatButton"
+                Margin="5"
+                Content="&#xe200;"
+                FontFamily="Segoe UI Symbol"
+                FontSize="20"
+                DockPanel.Dock="Right"
+                VerticalAlignment="Center" 
+                Style="{DynamicResource HyperLinkButton}"
+                Click="CreateChatButton_Click"/>
+        
+        <TextBlock x:Name="UsernameBlock"
+                   Text="Username"
+                   DockPanel.Dock="Left"
+                   VerticalAlignment="Center"
+                   FontSize="18"
+                   Margin="5"
+                   Foreground="{DynamicResource TextBrush}"/>
+    </DockPanel>
+</UserControl>

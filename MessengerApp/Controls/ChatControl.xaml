@@ -1,0 +1,197 @@
+﻿<UserControl x:Class="MessengerApp.Controls.ChatControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessengerApp.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="350">
+
+    <UserControl.Resources>
+
+        <Storyboard x:Key="ShowToolPanel">
+            <ThicknessAnimation 
+                    Storyboard.TargetName="ToolsPanel"
+                    Storyboard.TargetProperty="Margin"
+                    From="0 -40 0 0" To="0"
+                    Duration="0:0:0.1"/>
+        </Storyboard>
+
+        <Storyboard x:Key="HideToolPanel">
+            <ThicknessAnimation
+                Storyboard.TargetName="ToolsPanel"
+                Storyboard.TargetProperty="Margin"
+                From="0"
+                To="0 -40 0 0"
+                Duration="0:0:0.1"/>
+        </Storyboard>
+
+        <Storyboard x:Key="ShowEditPanel">
+            <ThicknessAnimation 
+                    Storyboard.TargetName="EditPanel"
+                    Storyboard.TargetProperty="Margin"
+                    From="0 0 0 -40" To="0"
+                    Duration="0:0:0.1"/>
+        </Storyboard>
+
+        <Storyboard x:Key="HideEditPanel">
+            <ThicknessAnimation
+                Storyboard.TargetName="EditPanel"
+                Storyboard.TargetProperty="Margin"
+                From="0"
+                To="0 0 0 -40"
+                Duration="0:0:0.1"/>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <DockPanel
+
+        Background="{DynamicResource PrimaryBitDarkerBrush}">
+        
+        <DockPanel
+            MaxHeight="200"
+            DockPanel.Dock="Bottom"
+            Panel.ZIndex="2"
+            Background="{DynamicResource PrimaryBrush}">
+
+            <Button
+                x:Name="AttachButton"
+                DockPanel.Dock="Left"
+                Style="{DynamicResource HyperLinkButton}"
+                Content="&#xE16C;"
+                FontSize="20"
+                FontFamily="Segoe UI Symbol"
+                VerticalAlignment="Center"
+                Margin="2 5 2 5"
+                Click="AttachButton_Click"/>
+            <Button
+                x:Name="SendButton"
+                DockPanel.Dock="Right"
+                Style="{DynamicResource HyperLinkButton}"
+                Content="&#xE122;"
+                FontSize="20"
+                FontWeight="Bold"
+                FontFamily="Segoe UI Symbol"
+                VerticalAlignment="Center"
+                Margin="0 5 9 5"
+                Click="SendButton_Click"/>
+            <TextBox 
+                x:Name="MessageTextBox"
+                Margin="0 5 5 5"
+                FontSize="16"
+                Style="{DynamicResource RoundedTextBlock}"
+                TextWrapping="Wrap" 
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                KeyDown="MessageBox_KeyDown"/>  
+            
+        </DockPanel>
+        
+        <DockPanel
+            DockPanel.Dock="Top"
+            Background="{DynamicResource PrimaryBrush}"
+            Height="40"
+            LastChildFill="False"
+            Panel.ZIndex="2">
+
+            <TextBlock
+                x:Name="ChatNameBlock"
+                DockPanel.Dock="Left"
+                Margin="5"
+                FontSize="18"
+                VerticalAlignment="Center"/>
+        </DockPanel>
+
+        <Grid>
+
+            <DockPanel
+                x:Name="ToolsPanel"
+                Height="40"
+                Background="{DynamicResource PrimaryBitLighterBrush}"
+                Margin="0 -80 0 0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="1"
+                LastChildFill="False">
+
+                <Button
+                    x:Name="DeleteMessageButton"
+                    Margin="5"
+                    Content="&#xE107;"
+                    FontFamily="Segoe UI Symbol"
+                    FontSize="20"
+                    DockPanel.Dock="Left"
+                    VerticalAlignment="Center" 
+                    Style="{DynamicResource HyperLinkButton}"
+                    Click="DeleteMessageButton_Click"/>
+
+                <Button
+                    x:Name="EditMessageButton"
+                    Margin="5"
+                    Content="&#xE104;"
+                    FontFamily="Segoe UI Symbol"
+                    FontSize="20"
+                    DockPanel.Dock="Left"
+                    VerticalAlignment="Center" 
+                    Style="{DynamicResource HyperLinkButton}"
+                    Click="EditMessageButton_Click"/>
+
+                <Button
+                    x:Name="DownloadMessageButton"
+                    Margin="5"
+                    Content="&#xE118;"
+                    FontFamily="Segoe UI Symbol"
+                    FontSize="20"
+                    DockPanel.Dock="Left"
+                    VerticalAlignment="Center" 
+                    Style="{DynamicResource HyperLinkButton}"
+                    Click="DownloadMessageButton_Click"/>
+
+            </DockPanel>
+
+            <DockPanel
+                x:Name="EditPanel"
+                Height="40"
+                Background="{DynamicResource PrimaryBitLighterBrush}"
+                Margin="0 0 0 -80"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Stretch"
+                Panel.ZIndex="1"
+                LastChildFill="False">
+
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Text="{DynamicResource lcEditing}"
+                    Margin="5"
+                    FontSize="16"/>
+
+                <Button
+                    x:Name="CancelEditingMessageButton"
+                    Margin="5"
+                    Content="&#xE10A;"
+                    FontFamily="Segoe UI Symbol"
+                    FontSize="20"
+                    DockPanel.Dock="Right"
+                    VerticalAlignment="Center" 
+                    Style="{DynamicResource HyperLinkButton}"/>
+
+            </DockPanel>
+
+            <ScrollViewer 
+                x:Name="MessageScroll"
+                VirtualizingPanel.ScrollUnit="Pixel"
+                DockPanel.Dock="Bottom"
+                HorizontalScrollBarVisibility="Disabled"
+                Margin="1 4 1 4"
+                ScrollChanged="MessageScroll_ScrollChanged">
+                
+                <ItemsControl 
+                    x:Name="MessageList"
+                    Background="{DynamicResource PrimaryBitDarkerBrush}" 
+                    MouseDown="MessageList_MouseDown">
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </DockPanel>
+</UserControl>

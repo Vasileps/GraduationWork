@@ -1,0 +1,62 @@
+﻿<Window x:Class="MessengerApp.Windows.StartUpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+        mc:Ignorable="d"
+        Title="StartUpWindow" Height="450" Width="300"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Icon="{svgc:SvgImage Source=/Assets/Icon.svg, AppName=MessengerApp}">
+    
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,0.85" StartPoint="0.5,0.05">
+            <GradientStop 
+                x:Name="Dark"
+                Color="{DynamicResource PrimaryColor}"
+                Offset="1"/>
+            <GradientStop 
+                Color="{DynamicResource SecondaryColor}"
+                Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard TargetProperty="Offset" TargetName="Dark">
+                        <DoubleAnimation 
+                            From="2" To="0.15"
+                            AutoReverse="True"
+                            RepeatBehavior="Forever"
+                            Duration="0:0:2"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid Margin="10"
+          Background="{DynamicResource PrimaryBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>            
+        </Grid.RowDefinitions>
+
+        <Image Source="{svgc:SvgImage Source=/Assets/Icon.svg, AppName=MessengerApp}"
+               Grid.Row="0"
+               Margin="5"/>
+
+        <Label Content="{DynamicResource lcStarting}"
+               Grid.Row="1"
+               Margin="5 0 5 5"
+               VerticalContentAlignment="Top"
+               HorizontalContentAlignment="Center" 
+               Foreground="White"
+               FontSize="35"
+               FontWeight="Bold" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

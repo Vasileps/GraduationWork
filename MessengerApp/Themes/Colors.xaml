@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="PrimaryColor">#2b2a28</Color>
+    <Color x:Key="PrimaryBitDarkerColor">#1C1B1A</Color>
+    <Color x:Key="PrimaryBitLighterColor">#353331</Color>
+    <Color x:Key="SecondaryColor">#6386a7</Color>
+    <Color x:Key="SecondaryBitDarkerColor">#54728C</Color>
+    <Color x:Key="SecondaryBitLighterColor">#729BBF</Color>    
+    <Color x:Key="TertiaryColor">#b7bbc9</Color>
+    <Color x:Key="TertiaryBitDarkerColor">#9FA2AD</Color>
+    <Color x:Key="TertiaryBitLighterColor">#CED2E0</Color>
+    <Color x:Key="TextColor">white</Color>
+    <Color x:Key="TextBitDarkerColor">#E5E5E5</Color>
+    <Color x:Key="ActiveColor">#6477AD</Color>
+
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{DynamicResource PrimaryColor}"/>
+    <SolidColorBrush x:Key="PrimaryBitDarkerBrush" Color="{DynamicResource PrimaryBitDarkerColor}"/>
+    <SolidColorBrush x:Key="PrimaryBitLighterBrush" Color="{DynamicResource PrimaryBitLighterColor}"/>
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{DynamicResource SecondaryColor}"/>
+    <SolidColorBrush x:Key="SecondaryBitDarkerBrush" Color="{DynamicResource SecondaryBitDarkerColor}"/>
+    <SolidColorBrush x:Key="SecondaryBitLighterBrush" Color="{DynamicResource SecondaryBitLighterColor}"/>
+    <SolidColorBrush x:Key="TertiaryBitDarkerBrush" Color="{DynamicResource TertiaryBitDarkerColor}"/>
+    <SolidColorBrush x:Key="TertiaryBitLighterBrush" Color="{DynamicResource TertiaryBitLighterColor}"/>
+    <SolidColorBrush x:Key="TertiaryBrush" Color="{DynamicResource TertiaryColor}"/>
+    <SolidColorBrush x:Key="TextBrush" Color="{DynamicResource TextColor}"/>
+    <SolidColorBrush x:Key="TextBitDarkerBrush" Color="{DynamicResource TextBitDarkerColor}"/>
+    <SolidColorBrush x:Key="ActiveBrush" Color="{DynamicResource ActiveColor}"/>
+
+</ResourceDictionary>

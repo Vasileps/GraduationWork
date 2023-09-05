@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="MessengerApp.Controls.ChatList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessengerApp.Controls"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             d:DesignHeight="450"
+             d:DesignWidth="300">
+    <Grid Background="{DynamicResource PrimaryBrush}">
+        <ScrollViewer
+            VirtualizingPanel.ScrollUnit="Pixel" 
+            HorizontalScrollBarVisibility="Disabled">
+
+            <ItemsControl x:Name="ChatsControl"/>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
